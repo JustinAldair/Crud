@@ -56,7 +56,9 @@ function createUser(req, res) {
 function createRoute(req, res) {
   const ruta = req.body;
   userService.createRoute(ruta, (error, result) => {
+    console.log("si estoy llegando")
     if(error){
+      console.log(error)
       res.status(500).send('Error al crear la ruta');
     }else{
       res.status(200).json(ruta)

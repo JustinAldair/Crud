@@ -61,7 +61,7 @@ public class FavoritoFragment extends Fragment {
     private Button buttonEliminar;
 
     private RequestQueue requestQueue;
-    private String baseUrl = APIUtils.getFullUrl("rutas/");
+    private String baseUrl = APIUtils.getFullUrl("");
 
 
 
@@ -199,6 +199,7 @@ public class FavoritoFragment extends Fragment {
         String idRuta = editTextIdBusqueda.getText().toString();
 
         String url = baseUrl + "ruta/" + idRuta;
+        System.out.println(url);
 
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
