@@ -221,18 +221,22 @@ public class FavoritoFragment extends Fragment {
                             editTextEncargado.setText(encargado);
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            System.out.println("error al extraer los datos");
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        System.out.println(error);
                         Toast.makeText(requireContext(), "Error al obtener la ruta", Toast.LENGTH_SHORT).show();
                     }
                 });
 
         jsonRequest.setTag(this);
         requestQueue.add(jsonRequest);
+
+
     }
 
     private void eliminarRuta() {
